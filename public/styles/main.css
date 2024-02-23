@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+nav {
+    background: #222;
+    padding: 0 15px;
+}
+
+.nav li a {
+    display: block;
+    padding: 15px 5px;
+}
+
+.shop-heading {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 80px;
+    padding-top: 20px;
+}
+
+
+
+.card-title {
+    color: #007bff;
+    /* Bootstrap primary color */
+}
+
+.card-text {
+    font-size: 16px;
+}
+
+.card-detail {
+    font-size: 12px;
+    color: rgb(131, 131, 131);
+}
+
+.card {
+    min-height: 300px;
+    /* Adjust this value as needed */
+    max-width: 280px;
+}
+
+.card-img {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+a:hover {
+    color: aqua;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+.link-container {
+    display: flex;
+    gap: 50px;
+}
+
+.logo {
+    float: left;
+    font-size: 20px;
+    padding: 7.5px 10px 7.5px 0;
+}
+
+.nav-item {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-item.button {
+    padding: 9px 5px;
+}
+
+.centered {
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropdown-img {
+    height: 50px;
+}
+
+.features {
+    text-align: left;
+}
+
+.feature-div {
+    margin-top: 100px
+}
+
+.copyright {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

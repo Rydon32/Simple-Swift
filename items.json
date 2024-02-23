@@ -1,0 +1,44 @@
+{
+    "externals":[
+        {
+            "id": 1,
+            "name": "Mouse 1",
+            "price": 5399,
+            "imgName": "mouse_1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Mouse 2",
+            "price": 7999,
+            "imgName": "mouse_2.webp"
+        },
+        {
+            "id": 3,
+            "name": "Keyboard 1",
+            "price": 18855,
+            "imgName": "keyboard_1.webp"
+        },
+        {
+            "id": 4,
+            "name": "Keyboard 2",
+            "price": 10459,
+            "imgName": "keyboard_2.webp"
+        }
+
+    ],
+    "internals":[
+        {
+            "id": 5,
+            "name": "CPU 1",
+            "price": 243999,
+            "imgName": "cpu_1.jpg"
+        },
+        {
+            "id": 6,
+            "name": "GPU 1",
+            "price": 54413,
+            "imgName": "gpu_1.jpg"
+        }
+
+    ]
+}

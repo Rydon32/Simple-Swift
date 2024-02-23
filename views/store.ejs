@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") %>
+<% if (message && message.length > 0) { %>
+  <div class="alert alert-warning" role="alert">
+    <%= message %>
+  </div>
+<% } %>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sort by:
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/store?sortBy=category" class="dropdown-item" href="#">Category</a></li>
+              <li><a href="/store?sortBy=name" class="dropdown-item" href="#">Name</a></li>
+              <li><a href="/store?sortBy=cheapest" class="dropdown-item" href="#">Price low to high</a></li>
+              <li><a href="/store?sortBy=expensive" class="dropdown-item" href="#">Price high to low</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <form class="d-flex"  action="/search" method="get">
+          <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<div id="itemsContainer" class="container mt-5">
+    <h1 class="text-center">Items for Sale</h1>
+    <div class="row">
+      <% items.forEach(function(item) { %>
+        <div class="card mx-3 my-2 <% if (item.matched) { %>matched<% } else { %>not-matched<% } %>" >
+          <img src=<%= item.imgSrc %> class="card-img-top card-img" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= item.name %> </h5>
+            <p class="card-text">$<%= (item.priceInCents / 100).toFixed(2) %></p>
+            <p class="card-detail">Category: <%= item.category %></p>
+            <button class="addToCartButton btn btn-warning" data-id="<%= item.id %>" data-name="<%= item.name %>" img-src="<%= item.imgSrc %>"> Add to cart</button>
+          </div>
+        </div>
+      <% }); %>
+      
+    </div>
+    <div class="text-center mt-4">
+        <button id="checkoutButton" class="btn btn-primary checkoutButton">Checkout</button>
+    </div>
+    <% if (searched) { %>
+    <div class="text-center mt-4">
+        <a href="/store"><button class="btn btn-warning">See all items</button></a>
+    </div>
+    <% } %>
+</div>
+<%- include("partials/footer.ejs") %>
